@@ -1,0 +1,44 @@
+{
+  "coffees": [
+    {
+      "id": 1,
+      "nome": "Tradicional",
+      "preco": 9.9,
+      "tipo": "Expresso tradicional",
+      "descricao": "O tradicional café feito com água quente e grãos moídos",
+      "src": "src/assets/coffee_5.svg"
+    },
+    {
+      "id": 2,
+      "nome": "Tradicional",
+      "preco": 9.9,
+      "tipo": "Expresso tradicional",
+      "descricao": "O tradicional café feito com água quente e grãos moídos",
+      "src": "src/assets/coffee_5.svg"
+    },
+    {
+      "id": 3,
+      "nome": "Tradicional",
+      "preco": 9.9,
+      "tipo": "Expresso tradicional",
+      "descricao": "O tradicional café feito com água quente e grãos moídos",
+      "src": "src/assets/coffee_5.svg"
+    },
+    {
+      "id": 4,
+      "nome": "Tradicional",
+      "preco": 9.9,
+      "tipo": "Expresso tradicional",
+      "descricao": "O tradicional café feito com água quente e grãos moídos",
+      "src": "src/assets/coffee_5.svg"
+    },
+    {
+      "id": 5,
+      "nome": "Tradicional",
+      "preco": 9.9,
+      "tipo": "Expresso tradicional",
+      "descricao": "O tradicional café feito com água quente e grãos moídos",
+      "src": "src/assets/coffee_5.svg"
+    }
+  ]
+}
