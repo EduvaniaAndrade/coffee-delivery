@@ -12,7 +12,6 @@ import {
 } from './styles'
 import { useContext, useEffect, Fragment } from 'react'
 import { CoffeeContext } from '../../../../context/CoffeesContext'
-import { Address } from '../../../../reducers/Coffees/reducer'
 
 export function CoffeeCard() {
   const {

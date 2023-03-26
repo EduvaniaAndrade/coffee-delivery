@@ -28,6 +28,8 @@ interface CoffeesContextType {
   removeFromList: (coffees: Coffee) => void
   addUserAddress: (e: any) => void
   addAddressData: (address: Address) => void
+  setItemNumbers: (e: any) => void
+  setCoffeesNumbers: (e: any) => void
 
   setNumero: (e: any) => void
   setRua: (e: any) => void
@@ -48,7 +50,7 @@ export function CoffeeContextProvider({ children }: CoffeeProps) {
   const [address, setAddress] = useState<Address>({} as Address)
   const [itemNumbers, setItemNumbers] = useState(0)
   const [valueTotalItem, setValueTotalItem] = useState(0)
-  const [coffeesNumbers, setCoffeesNumbers] = useState('hide')
+  const [coffeesNumbers, setCoffeesNumbers] = useState('')
   const [shadow, setShadow] = useState('boxShadow')
 
   const [numero, setNumero] = useState('')
@@ -151,13 +153,16 @@ export function CoffeeContextProvider({ children }: CoffeeProps) {
       })
       localStorage.setItem(
         '@coffee-delivery:coffees',
-        JSON.stringify([selectedCoffees, totalForCoffee]),
+        JSON.stringify([selectedCoffees, totalForCoffee, itemNumbers]),
       )
       setValueTotalItem(totalForCoffee)
       setItemNumbers(itemNumbers)
+      console.log(itemNumbers)
 
-      if (itemNumbers > 0) {
-        setCoffeesNumbers('show')
+      {
+        itemNumbers !== 0
+          ? setCoffeesNumbers('show')
+          : setCoffeesNumbers('hide')
       }
     }
 
@@ -189,6 +194,8 @@ export function CoffeeContextProvider({ children }: CoffeeProps) {
         decrementItemAndRemove,
         removeFromList,
         addUserAddress,
+        setItemNumbers,
+        setCoffeesNumbers,
         setNumero,
         setRua,
         setBairro,

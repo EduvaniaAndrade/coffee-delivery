@@ -1,8 +1,7 @@
 import { MapPinLine } from 'phosphor-react'
-import { useForm, useFormContext } from 'react-hook-form'
 import { Title } from '../../styles'
 import { Container, Content } from './styles'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { CoffeeContext } from '../../../../context/CoffeesContext'
 
 export function RequestForm() {

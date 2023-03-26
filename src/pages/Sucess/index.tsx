@@ -1,17 +1,22 @@
 import illustration from '../../assets/Illustration.svg'
 import { Content, ContentInfo, IconContent, SucessContainer } from './styles'
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
-import { useEffect, useContext, useState, useMemo } from 'react'
+import { useEffect, useContext } from 'react'
 import { CoffeeContext } from '../../context/CoffeesContext'
 
 export function Sucess() {
-  const { addAddressData, address } = useContext(CoffeeContext)
+  const { itemNumbers, address, addAddressData, setItemNumbers } = useContext(
+    CoffeeContext,
+  )
 
   useEffect(() => {
     const data = localStorage.getItem('@coffee-delivery:userAddress')
     const dataString = JSON.parse(data as string)
+    const dataItem = localStorage.getItem('@coffee-delivery:coffees')
+    const item = JSON.parse(dataItem as string)
+    setItemNumbers(item[2])
     addAddressData(dataString)
-    console.log(address)
+    console.log(itemNumbers)
   }, [])
 
   return (

@@ -1,11 +1,17 @@
 import logotipo from '../../assets/Logo.svg'
 import { HeaderContainer } from './styles'
 import { FaMapMarkerAlt, FaShoppingCart } from 'react-icons/fa'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CoffeeContext } from '../../context/CoffeesContext'
 
 export function Header() {
-  const { itemNumbers, shadow, coffeesNumbers } = useContext(CoffeeContext)
+  const {
+    itemNumbers,
+    setItemNumbers,
+    shadow,
+    coffeesNumbers,
+    setCoffeesNumbers,
+  } = useContext(CoffeeContext)
 
   return (
     <>
@@ -18,7 +24,9 @@ export function Header() {
           </span>
           <span className="carIcon">
             <FaShoppingCart />
-            <span className={coffeesNumbers}>{itemNumbers}</span>
+            <span className={itemNumbers === 0 ? 'hide' : 'show'}>
+              {itemNumbers}
+            </span>
           </span>
         </nav>
       </HeaderContainer>
